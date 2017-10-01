@@ -1,6 +1,6 @@
 require('dotenv').config();
 var dash_button = require('node-dash-button');
-var dash = dash_button(process.env.DASH_MAC, null, 1000, 'all');
+var dash = dash_button(process.env.DASH_MAC, 'wlan0', 1000, 'all');
 const fs = require('fs');
 const request = require('request');
 const url = process.env.CAM_URL;
@@ -33,6 +33,8 @@ dash.on("detected", function(){
             			var params = { Bucket: bucketName, Key: 'test.png', Expires: 3600 };
 
             			let url = s3.getSignedUrl('getObject', params);
+	
+				console.log(url);				
 
             			fs.unlink('test.png', function(error){
                 			if(error)
