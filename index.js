@@ -1,4 +1,5 @@
-require('dotenv').config();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '.env') });
 const dash_button = require('node-dash-button');
 const dash = dash_button(process.env.DASH_MAC, null, 1000, 'all');
 const fs = require('fs');
@@ -8,7 +9,6 @@ const AWS = require('aws-sdk');
 const bucketName = process.env.BUCKET_NAME;
 const ifttt_url = process.env.IFTTT_URL;
 const moment = require('moment');
-const path = require('path');
 
 AWS.config.loadFromPath(path.resolve(__dirname, 'aws-credentials.json'));
 
