@@ -8,6 +8,7 @@
     "dotenv": "^4.0.0",
     "forever": "^0.15.3",
     "moment": "^2.18.1",
+    "node-aplay": "^1.0.3",
     "node-dash-button": "^0.6.1",
     "request": "^2.83.0"
   },
