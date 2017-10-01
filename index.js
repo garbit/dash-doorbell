@@ -8,8 +8,9 @@ const AWS = require('aws-sdk');
 const bucketName = process.env.BUCKET_NAME;
 const ifttt_url = process.env.IFTTT_URL;
 const moment = require('moment');
+const path = require('path');
 
-AWS.config.loadFromPath('aws-credentials.json');
+AWS.config.loadFromPath(path.resolve(__dirname, 'aws-credentials.json'));
 
 const s3 = new AWS.S3({signatureVersion: 'v4'});
 var s3Bucket = new AWS.S3({ params: { Bucket: bucketName } })
@@ -20,8 +21,8 @@ function download(uri, file) {
 			if (err) {
 				reject(err)
 			} else {
-				request(uri).pipe(fs.createWriteStream(file)).on('close', async () => {
-					let tmpFile = await readFileAsync(file);
+				request(uri).pipe(fs.createWriteStream(path.resolve(__dirname, file))).on('close', async () => {
+					let tmpFile = await readFileAsync(path.resolve(__dirname, file));
 					resolve(tmpFile);
 				})
 			}
