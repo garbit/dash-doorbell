@@ -59,3 +59,5 @@ typings/
 
 aws-credentials.json
 node_modules
+
+tmp
