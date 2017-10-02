@@ -41,7 +41,7 @@ BUCKET_NAME=AWS_S3_BUCKET_NAME
 ```
 
 ### CAM_URL (.env)
-To obtain a MotionEyeOS camera still image you need to do the following:
+To obtain a [MotionEyeOS](https://github.com/ccrisan/motioneyeos) camera still image you need to do the following:
 
 1. Sign into your local MotionEyeOS pi camera and click on the camera you wish to create the still from.
 2. Open the side menu
@@ -96,12 +96,12 @@ The config file has the following parameters which can be obtained from the [AWS
 }
 ```
 
-## Debian packages
+# Debian packages
 Running this on a debian system (i.e. a Raspberry Pi) requires that you install the following packages:
 ```
 sudo apt-get install alsa-base alsa-utils
 ```
 
-## Node.js
+# Min Node.js Requirements
 Requires Node.js version 7 (async await)
 

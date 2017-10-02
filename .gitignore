@@ -61,3 +61,5 @@ aws-credentials.json
 node_modules
 
 tmp
+
+sounds/tng-doorbell.wav
